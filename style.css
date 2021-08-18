@@ -1,0 +1,69 @@
+@charset "UTF-8";
+.star {
+  margin: 50px auto;
+  width: 400px;
+}
+.star > * {
+  float: right;
+}
+@keyframes pulse {
+  50% {
+    color: #ff66ff;
+    text-shadow: 0 0 15px #ff66ff;
+  }
+}
+.star label {
+  height: 80px;
+  width: 20%;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+.star label:nth-of-type(5):after {
+  animation-delay: 0.5s;
+}
+.star label:nth-of-type(4):after {
+  animation-delay: 0.4s;
+}
+.star label:nth-of-type(3):after {
+  animation-delay: 0.3s;
+}
+.star label:nth-of-type(2):after {
+  animation-delay: 0.2s;
+}
+.star label:nth-of-type(1):after {
+  animation-delay: 0.1s;
+}
+.star label:after {
+  transition: all 1s ease-out;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  content: "☆";
+  color: magenta;
+  top: 2em;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 80px;
+  animation: 1s pulse ease;
+}
+.star label:hover:after {
+  color: #ff33ff;
+  text-shadow: 0 0 15px #ff33ff;
+}
+.star input {
+  display: none;
+}
+.star input:checked + label:after,
+.star input:checked ~ label:after {
+  content: "★";
+  color: #F9BF3B;
+  text-shadow: 0 0 20px #F9BF3B;
+}
+
+body {
+  background-color: black;
+}
+
+/*# sourceMappingURL=style.css.map */
